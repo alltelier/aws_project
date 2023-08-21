@@ -7,7 +7,6 @@ resource "aws_vpc" "project04_vpc" {
 	tags = {
 		Name = "project04-vpc"
 	}
-
 }
 
 #0620화
@@ -75,6 +74,9 @@ resource "aws_eip" "project04_eip" {
 	depends_on = [ "aws_internet_gateway.project04_igw" ]
 	lifecycle {
 		create_before_destroy = true
+	}
+	tags = {
+		Name = "project04_eip"
 	}
 }
 
